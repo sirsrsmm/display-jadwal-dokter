@@ -111,7 +111,7 @@ export default function DoctorScheduleWeekly() {
       <Card className="border bg-gradient-to-br from-accent/5 via-card to-secondary/5 overflow-hidden flex-1 flex flex-col">
         <CardHeader className="pb-1 pt-1.5 px-2 sm:px-3">
           <div className="flex justify-between items-center">
-            <CardTitle className="text-xs sm:text-sm lg:text-base">Jadwal - {selectedPoli}</CardTitle>
+            <CardTitle className="text-lg sm:text-xl lg:text-base">Jadwal Dokter Per Poli - {selectedPoli}</CardTitle>
             {hasMoreThanTen && (
               <span className="text-xs text-muted-foreground">
                 {autoScrollIndex + 1}-{Math.min(autoScrollIndex + 10, totalDoctors)} dari {totalDoctors}
@@ -124,13 +124,13 @@ export default function DoctorScheduleWeekly() {
             <table className="w-full text-xs sm:text-xs">
               <thead>
                 <tr className="border-b bg-muted/50 sticky top-0 z-20">
-                  <th className="px-1.5 sm:px-2 py-1 sm:py-1.5 text-left font-semibold text-foreground sticky left-0 bg-muted/50 z-10 min-w-[100px] sm:min-w-[130px]">
+                  <th className="px-1.5 sm:px-2 py-1 sm:py-1.5 text-left font-semibold text-foreground sticky left-0 bg-muted/50 z-10 min-w-[70px] sm:min-w-[100px]">
                     Dokter
                   </th>
                   {daysOfWeek.map((day) => (
                     <th
                       key={day}
-                      className="px-1 sm:px-2 py-1 sm:py-1.5 text-center font-semibold text-foreground min-w-[60px] sm:min-w-[70px] border-l text-xs"
+                      className="px-1 sm:px-2 py-1 sm:py-1.5 text-center font-semibold text-foreground min-w-[40px] sm:min-w-[50px] border-l text-xs"
                     >
                       <div className="uppercase tracking-tight text-muted-foreground text-xs">{day.slice(0, 3)}</div>
                     </th>
@@ -142,8 +142,8 @@ export default function DoctorScheduleWeekly() {
                   <tr key={doctor.id} className="border-b hover:bg-muted/30 transition-colors">
                     <td className="px-1.5 sm:px-2 py-1 sm:py-1.5 sticky left-0 bg-card z-10 font-medium">
                       <div className="space-y-0">
-                        <p className="text-xs font-semibold text-foreground truncate">{doctor.name}</p>
-                        <p className="text-xs text-accent truncate hidden sm:block">{doctor.specialty}</p>
+                        <p className="text-lg font-semibold text-foreground truncate">{doctor.name}</p>
+                        {/* <p className="text-xs text-accent truncate hidden sm:block">{doctor.specialty}</p> */}
                       </div>
                     </td>
                     {daysOfWeek.map((day) => {
@@ -153,7 +153,7 @@ export default function DoctorScheduleWeekly() {
                           {daySchedule ? (
                             <div className="space-y-0.5">
                               <div
-                                className={`px-1 sm:px-1.5 py-0.5 rounded text-xs font-semibold whitespace-nowrap inline-block text-center ${
+                                className={`px-1 sm:px-1.5 py-0.5 rounded font-semibold whitespace-normal inline-block text-center text-base ${
                                   daySchedule.available
                                     ? "bg-green-400/20 text-green-700 dark:text-green-400"
                                     : "bg-amber-400/20 text-amber-700 dark:text-amber-400"
@@ -178,7 +178,7 @@ export default function DoctorScheduleWeekly() {
       
 
       {/* Legend */}
-      <div className="flex flex-wrap gap-4 text-xs text-muted-foreground px-2 mt-2 sm:mt-2.5">
+      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground px-2 mt-2 sm:mt-2.5">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded bg-green-400/60"></div>
           <span>Dokter Tersedia</span>

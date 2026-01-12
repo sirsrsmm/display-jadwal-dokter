@@ -19,7 +19,7 @@ export default function HospitalHeader({ currentDate, currentTime }: HospitalHea
           </div>
 
           <div className="text-right flex-shrink-0">
-            <div className="text-xs sm:text-sm text-primary-foreground/80 mb-1 hidden sm:block">{currentDate}</div>
+            <div className="text-sm sm:text-base text-primary-foreground/80 mb-1 hidden sm:block">{currentDate}</div>
             <div className="flex items-center gap-2 justify-end">
               <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
               <span className="text-sm sm:text-base lg:text-lg font-mono text-primary-foreground font-bold">
